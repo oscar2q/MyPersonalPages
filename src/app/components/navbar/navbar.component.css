@@ -1,0 +1,325 @@
+@property --rangeNav{
+  syntax: "number";
+  inherits: false;
+  initial-value:0;
+}
+
+.minNav{
+  padding-left:20px;
+  height:60px;
+  width:100%;
+  --background-color:var(--base-Color-white);
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  display:none;
+}
+
+:where(.navbar){
+  background-color: var(--base-color-text);
+  color: var(--base-color);
+  width: 100%;
+  min-height: 60px;
+  column-gap: 20px;
+  display: flex;
+  position:fixed;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  animation-name: nav_bar_animation;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: scroll(root block);
+  animation-range: 0px 46px;
+}
+
+:where(.nav-bar){
+  column-gap: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 12vh;
+}
+
+
+@keyframes nav_bar_animation{
+  to{
+        background-color:var(--nav-base-color);
+        border-radius: 0px 0px 25px 25px;
+        box-shadow: 0px 0px 5px 0px var(--linksH);
+        z-index: 1;
+        backdrop-filter: blur(5px);
+        color:var(--base-Color-white);
+      }
+}
+
+.nav-bar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  column-gap: 35px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.nav-bar ul li{
+  column-gap: 24px;
+}
+
+.menuBargur{
+  display: none;
+}
+
+
+.select_item{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.select_item::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--linksH);
+  transition: width 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.select_item:hover::after{
+  width: 100%;
+}
+
+.backgrounColor{
+  height: 52px;
+  width: 131px;
+  border-radius: 8px;
+  animation: buttom_animation_list linear both;
+  animation-timeline: scroll(root block);
+  animation-range: 0px 150px;
+}
+
+
+.buttom-list{
+  column-gap: 25px;
+  --background-color: #E0E0E0;
+  column-gap: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6px;
+  height: 45px;
+  width: 118px;
+  border-radius: 10px
+}
+
+
+.buttom-night-light {
+  background-color: #0C0C1D;
+  border-color: transparent;
+  height: 38px;
+  width: 41px;
+  border-radius: 11px;
+  --border: 3px solid #FAFAFA;
+  animation: animation_buttom linear both;
+  animation-timeline: scroll(root block);
+  animation-range: 0px 150px;
+}
+
+@keyframes animation_buttom{
+  to{
+    box-shadow:0px 0px 5px 3px #F1EBD3
+  }
+}
+/*New Buttom*/
+.ButtomOnOff{
+  position:relative;
+  background-color: #D3D3D3;
+  height: 38px;
+  width: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  border-radius: 5px;
+  align-items: center;
+  align-content: center;
+}
+
+.ButtomOnOff button{
+  border: none;
+  background-color: transparent;
+}
+
+.animacionButtom{
+  box-shadow: 1px 0px 1px #5c799a;
+  border-right: 0px #353535;
+  position: absolute;
+  background-color: #1d1d1d;
+  height: 100%;
+  width: 50%;
+  z-index: 0;
+  border-radius: 5px;
+}
+
+.animacionMoonSelect{
+  animation: --animacion_Moon ease 1s forwards;
+}
+
+.animacionSoonSelect{
+  animation: --animacion_Soon ease 1s forwards;
+}
+
+.ButtomNotSelect{
+  flex: 1;
+  z-index: 1;
+  cursor:pointer;
+}
+
+@keyframes --animacion_Moon{
+  0%{
+    transform: translateX(0px);
+    --box-shadow: -1px 0px 2px #353535;
+  }
+  100%{
+    transform: translateX(56px);
+    box-shadow: -1px 0px 2px #353535;
+  }
+}
+
+@keyframes --animacion_Soon{
+  0%{
+    transform: translateX(56px);
+    --box-shadow: -1px 0px 2px #353535;
+  }
+  100%{
+    transform: translateX(0px);
+    box-shadow: -1px 0px 2px #353535;
+  }
+}
+
+@media(max-width:725px){
+  .nav-bar section:nth-child(2),
+  .nav-bar section:nth-child(3){
+    display: none;
+  }
+
+  .menuBargur{
+    display: block;
+    cursor: pointer;
+  }
+
+}
+
+@media(max-width:580px){
+  .nav-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .nav-bar ul{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  .navbar{
+    background-color: var(--base-color-text);
+    transform: translateX(-200px);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 8px;
+    width: 32%;
+    height: 100%;
+    row-gap: 21px;
+    flex-wrap: nowrap;
+  }
+
+  .minNav{
+    display:flex;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .nav-bar section:nth-child(2),
+  .nav-bar section:nth-child(3){
+    display: flex;
+  }
+
+/* y = 0 y = -63 */
+  .minnavNotSee{
+    animation: animacionNotNavMovile  forwards 0.5s linear;
+  }
+/* y = -63 y = 0 */
+  .navbarSelectDisguise{
+    animation:animacionSeeNavMovile  forwards 0.5s;
+  }
+
+/* x = 0 x = -175 */
+  .navBarSelect{
+    animation: animacionNavLater  forwards 0.5s;
+  }
+/* x = 175 x = 0 */
+  .navBarNotSelect{
+    animation: animacionNavOcul forwards 0.5s;
+  }
+}
+
+
+@keyframes animacionNavLater{
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(-175px);
+  }
+}
+
+@keyframes animacionNavOcul{
+  0%{
+    transform: translateX(-175px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+
+@keyframes animacionNotNavMovile{
+  0%{
+    transform:translateY(0px);
+  }
+  100%{
+    transform: translateY(-63px);
+  }
+}
+
+@keyframes animacionSeeNavMovile{
+  0%{
+    transform: translateY(-63px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}

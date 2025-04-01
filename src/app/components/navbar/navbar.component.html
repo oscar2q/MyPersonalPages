@@ -1,0 +1,54 @@
+<div
+      #minNav  class="minNav" >
+  <button
+    (click)="navBarSelect()"
+    type="button" >
+    <SVG-Menu/>
+  </button>
+</div>
+<nav
+  #nav
+  class="navbar">
+  <button
+  type="button"
+  class="menuBargur"
+  (click)="ocultoBarSelect()">
+    <SVG-Menu/>
+  </button>
+  <section class="nav-bar">
+    <section>
+    <ul>
+      <li class="select_item">Sobre Mi</li>
+      <li class="select_item">Proyectos</li>
+      <li class="select_item">Herramientas</li>
+      <li class="select_item">Experiencia</li>
+      <li class="select_item">Contactame</li>
+    </ul>
+    </section>
+    <section class="ButtomOnOff">
+      <div
+      [@buttomSelect]="lightNight ? 'ButtomNight' : 'ButtomLight'"
+      id="animacion"
+      class="animacionButtom">
+      </div>
+    <button
+      type="button"
+      (click)="bttPagesNight()"
+      class="ButtomNotSelect">
+      <SVG-Luna />
+    </button>
+    <button
+    type="buttom"
+    (click)="bttPagesSon()"
+    type="button"
+    class="ButtomNotSelect">
+      <SVG-SolSimple />
+    </button>
+    </section>
+    <section>
+    <ul>
+      <li>Esp/Ing</li>
+    </ul>
+    </section>
+  </section>
+</nav>

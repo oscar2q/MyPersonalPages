@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  --base-color-navbar-light:rgb(142 190 222 / 60%);
+  --color-rosa-Claro:#ffc0cb;
+  --color-lightPing:#ffb6c1;
+  --color-HotPink:#ff69b4;
+  --color-roseRoes:#FF1493;
+  --color_morado:rgb(167, 144,212);
+  --color_rojo:rgb(229,70,134);
+  --base-Color-black:#010409;
+  --base-Color-white:#fffafa;
+  --base-Color-nieve:#ebebeb;
+  --base-color-night:#0C0C1D;
+  --base-Color-sol:#ffd280;
+  --Color-boder-azul:#0079ff1a;
+  --Color-Border-Morado:#f91cff33;
+  --Color-Border-white:#fffbfb7d;
+  --Color-Border-red:#ff565633;
+  --Color-Border-vinoR:#cb1f7b33;
+  --Color-Pink:#feadc5;
+  --Color-aliceblue:#f0f8ff;
+  --box-sizing:border-box;
+  box-sizing: content-box;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  ::selection{
+    color: var(--Color-Pink);
+    background-color: var(--Color-aliceblue);
+  }
+
+}
+
+button{
+  cursor: pointer;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+}
+
+/*inicio de darck mode*/
+.class_Mode_Light{
+  --footer:#cccccc;
+  --text:var(--base-color-night);
+  --circle:var(--base-color-night);
+  --linksH:var(--color-roseRoes);
+  --nav-base-color:#d8d8d8;
+  --base-color:var(--base-color-night);
+  --base-color-text:var(--base-Color-white);
+  background-color: var(--base-Color-nieve);
+  color: var(--base-Color-nieve);
+  svg{
+    fill:var(--base-Color-white);
+  }
+  svg path{
+    fill:var(--base-Color-white);
+  }
+
+  svg rect{
+    stroke:var(--base-Color-white);
+  }
+
+  #ts path{
+    fill:var(--base-color-night);
+  }
+
+}
+
+.Mode_Dark{
+  --nav-base-color:rgba(0, 0, 0, 0.65);
+  --footer:#ebebeb;
+  --text:--var(--base-color-night);
+  --circle:var(--base-color-night);
+  --linksH:var(--base-Color-nieve);
+  --base-color:var(--base-Color-white);
+  --base-color-text:var(--base-color-night);
+  background-color: var(--base-color);
+  color: var(--base-color-text);
+  svg{
+    fill:var(--base-color-night);
+  }
+  svg path{
+    fill:var(--base-color-night);
+  }
+
+  svg rect{
+    stroke:var(--base-color-night);
+  }
+  #ts path{
+    fill:var(--base-Color-nieve);
+  }
+}
+
+:where(body){
+  background-color: var(--base-color-night);
+}
