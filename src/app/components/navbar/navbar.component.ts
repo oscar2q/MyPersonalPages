@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, output, Renderer2, viewChild } from '@angular/core';
+import { afterRender, Component, ElementRef, inject, OnInit, output, Renderer2, viewChild } from '@angular/core';
 import { LunaSvg } from '../../svg/Components/Icons-Svg/LunaSvg.component';
 import { SolSimpleSvg } from '../../svg/Components/Icons-Svg/SolSimpleSvg.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
@@ -6,7 +6,7 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
 
 @Component({
   selector: 'navbar-component',
-  imports: [LunaSvg, SolSimpleSvg, MenuOpcional],
+  imports: [LunaSvg, SolSimpleSvg, MenuOpcional,],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
   animations:[
@@ -54,7 +54,8 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
 
   ],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+
   private render:Renderer2 = inject(Renderer2);
   protected nav = viewChild<ElementRef>('nav');
   protected minNav = viewChild<ElementRef>('minNav');
@@ -66,50 +67,60 @@ export class NavbarComponent {
 
   public flyLight = output<boolean>();
 
+  constructor(){
+    afterRender({
+      read:(()=>{
+        this.#VerificationLight();
+      })
+  })
+}
+
+  ngOnInit():void{/*this.#VerificationLight();*/}
+
+
+   #VerificationLight():void{
+    const typeLight = localStorage.getItem('TypeLight');
+    if(typeLight){
+        if(typeLight === 'class_Mode_Light'){
+          this.lightNight = true;
+          return;
+        }else if(typeLight === 'Mode_Dark'){
+          this.lightNight = false;
+          return;
+        }
+        return;
+    }
+    return;
+  }
+
   public bttPagesSon():void{
     this.lightNight = true;
     this.flyLight.emit(true);
-    //this.render.addClass(this.nav()?.nativeElement,'navbarwhite');
   }
 
   public bttPagesNight():void{
     this.lightNight = false;
     this.flyLight.emit(false);
-    //this.render.removeClass(this.nav()?.nativeElement,'navbarwhite');
   }
-  /**
-   * nav:derechaX
-   * minnav:arrivaY
-   */
 
   public navBarSelect():void{
-    console.log("hola?");
-    //this.navVarSee = true;
-    //this.mostrar = false;
-    /*minnav tiene que subir y bajar*/
 
     this.render.removeClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
     this.render.addClass(this.minNav()?.nativeElement,'minnavNotSee');
+    console.log(this.render.addClass(this.minNav()?.nativeElement,'minnavNotSee' ));
     this.render.removeClass(this.nav()?.nativeElement,'navBarSelect');
-    this.render.addClass(this.nav()?.nativeElement,'navBarNotSelect');
-
-    //this.render.removeClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
-    //this.render.removeClass(this.nav()?.nativeElement,'navBarNotSelect');
+    this.render.addClass(this.nav()!.nativeElement,'navBarNotSelect');
 
   }
 
   public ocultoBarSelect():void{
 
-    //this.render.removeClass(this.minNav()?.nativeElement,'minnavNotSee');
-    //this.render.removeClass(this.nav()?.nativeElement,'navBarSelect');
     this.render.removeClass(this.nav()?.nativeElement,'navBarNotSelect');
     this.render.addClass(this.nav()?.nativeElement,'navBarSelect');
 
     this.render.removeClass(this.minNav()?.nativeElement,'minnavNotSee');
     this.render.addClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
 
-    //this.navVarSee = false;
-    //this.mostrar = true;
   }
 
 }

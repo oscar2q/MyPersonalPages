@@ -4,13 +4,25 @@ import { Component, input } from "@angular/core";
   selector:'SVG-Nestjs',
   imports:[],
   styles:`
-@media(width <= 550px){
 
-svg{
+  @media(width <= 550px){
+    svg{
+          width:35px;
+          height:35px;
+     }
+  }
+
+
+  svg{
+    fill:var(--svgColorBase);
+  }
+
+  @media(width <= 550px){s
+    svg{
       width:40px;
       height:40px;
- }
-}
+    }
+  }
   `,
   template:`
   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 184 186" fill="none">

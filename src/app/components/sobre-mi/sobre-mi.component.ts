@@ -8,11 +8,7 @@ import { style, transition, trigger } from '@angular/animations';
   templateUrl: './sobre-mi.component.html',
   styleUrl: './sobre-mi.component.css',
   animations:[
-    /*trigger('BorderColor',[
-      transition('* <=> *',[ TransitionBorderColor]),
 
-    ])
-      */
   ]
 })
 export class SobreMiComponent {

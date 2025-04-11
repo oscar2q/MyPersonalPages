@@ -1,10 +1,9 @@
-<div
-      #minNav  class="minNav" >
-  <button
+<div #minNav class="minNav" >
+    <button
     (click)="navBarSelect()"
     type="button" >
-    <SVG-Menu/>
-  </button>
+      <SVG-Menu/>
+    </button>
 </div>
 <nav
   #nav
@@ -18,11 +17,13 @@
   <section class="nav-bar">
     <section>
     <ul>
-      <li class="select_item">Sobre Mi</li>
-      <li class="select_item">Proyectos</li>
-      <li class="select_item">Herramientas</li>
-      <li class="select_item">Experiencia</li>
-      <li class="select_item">Contactame</li>
+      <li class="select_item"><a href="#sobremi">Sobre Mi</a></li>
+      <li class="select_item"><a href="#proyects">Proyectos</a></li>
+      <li class="select_item"><a  href="#herramientas">Herramientas</a></li>
+      <!----
+        <li class="select_item"><a >Experiencia</a></li>
+        <li class="select_item"><a >Contactame</a></li>
+      ---->
     </ul>
     </section>
     <section class="ButtomOnOff">
@@ -45,10 +46,12 @@
       <SVG-SolSimple />
     </button>
     </section>
+    <!-----
     <section>
     <ul>
       <li>Esp/Ing</li>
     </ul>
     </section>
+  ---->
   </section>
 </nav>

@@ -4,8 +4,13 @@ import { Component } from '@angular/core';
   selector:'SVG-Estrella',
   imports: [],
   styles:`
+
+    svg path{
+      fill:var(--svgColorBase);
+    }
+
     @media( width <= 550px){
-      svg{
+      :where(svg){
         width:35px;
         height:35px;
       }

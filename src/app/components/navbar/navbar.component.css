@@ -1,18 +1,22 @@
-@property --rangeNav{
-  syntax: "number";
-  inherits: false;
-  initial-value:0;
-}
-
 .minNav{
   padding-left:20px;
   height:60px;
   width:100%;
-  --background-color:var(--base-Color-white);
+  background-color:var(--nav-base-color);
   display:flex;
   flex-direction:row;
   align-items:center;
   display:none;
+  animation-name: navbarMin;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: scroll(root block);
+  animation-range: 0px 46px;
+}
+
+.nav-bar ul li a{
+  text-decoration: none;
+  color: var(--base-color);
 }
 
 :where(.navbar){
@@ -27,7 +31,6 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-
   animation-name: nav_bar_animation;
   animation-timing-function: linear;
   animation-fill-mode: both;
@@ -53,9 +56,18 @@
         box-shadow: 0px 0px 5px 0px var(--linksH);
         z-index: 1;
         backdrop-filter: blur(5px);
-        color:var(--base-Color-white);
       }
 }
+
+@keyframes navbarMin{
+  to{
+    background-color:var(--nav-base-color);
+    box-shadow: 0px 0px 5px 0px var(--linksH);
+    z-index: 1;
+    backdrop-filter: blur(5px);
+  }
+}
+
 
 .nav-bar ul{
   display: flex;
@@ -70,6 +82,10 @@
 
 .nav-bar ul li{
   column-gap: 24px;
+}
+.nav-bar ul li a{
+  list-style: none;
+
 }
 
 .menuBargur{
@@ -108,10 +124,8 @@
   animation-range: 0px 150px;
 }
 
-
 .buttom-list{
   column-gap: 25px;
-  --background-color: #E0E0E0;
   column-gap: 26px;
   display: flex;
   flex-direction: row;
@@ -123,14 +137,12 @@
   border-radius: 10px
 }
 
-
 .buttom-night-light {
   background-color: #0C0C1D;
   border-color: transparent;
   height: 38px;
   width: 41px;
   border-radius: 11px;
-  --border: 3px solid #FAFAFA;
   animation: animation_buttom linear both;
   animation-timeline: scroll(root block);
   animation-range: 0px 150px;
@@ -141,7 +153,7 @@
     box-shadow:0px 0px 5px 3px #F1EBD3
   }
 }
-/*New Buttom*/
+
 .ButtomOnOff{
   position:relative;
   background-color: #D3D3D3;
@@ -175,11 +187,11 @@
 }
 
 .animacionMoonSelect{
-  animation: --animacion_Moon ease 1s forwards;
+  animation: animacion_Moon ease 1s forwards;
 }
 
 .animacionSoonSelect{
-  animation: --animacion_Soon ease 1s forwards;
+  animation: animacion_Soon ease 1s forwards;
 }
 
 .ButtomNotSelect{
@@ -188,10 +200,9 @@
   cursor:pointer;
 }
 
-@keyframes --animacion_Moon{
+@keyframes animacion_Moon{
   0%{
     transform: translateX(0px);
-    --box-shadow: -1px 0px 2px #353535;
   }
   100%{
     transform: translateX(56px);
@@ -199,10 +210,9 @@
   }
 }
 
-@keyframes --animacion_Soon{
+@keyframes animacion_Soon{
   0%{
     transform: translateX(56px);
-    --box-shadow: -1px 0px 2px #353535;
   }
   100%{
     transform: translateX(0px);
@@ -220,7 +230,6 @@
     display: block;
     cursor: pointer;
   }
-
 }
 
 @media(max-width:580px){
@@ -269,34 +278,38 @@
 
 /* y = 0 y = -63 */
   .minnavNotSee{
-    animation: animacionNotNavMovile  forwards 0.5s linear;
+    animation: animacion-not-nav-mobile  forwards 0.5s linear;
   }
 /* y = -63 y = 0 */
   .navbarSelectDisguise{
-    animation:animacionSeeNavMovile  forwards 0.5s;
+    animation:animacion-see-navmobile  forwards 0.5s;
+  }
+
+  .minNav .navbarSelectDisguise button svg line{
+    stroke: var(--base-color-night);
   }
 
 /* x = 0 x = -175 */
   .navBarSelect{
-    animation: animacionNavLater  forwards 0.5s;
+    animation: animacion-nav-Later  forwards 0.5s;
   }
 /* x = 175 x = 0 */
   .navBarNotSelect{
-    animation: animacionNavOcul forwards 0.5s;
+    animation: animacion-nav-ocul forwards 0.5s;
   }
+
 }
 
-
-@keyframes animacionNavLater{
+@keyframes animacion-nav-Later{
   0%{
     transform: translateX(0px);
   }
   100%{
-    transform: translateX(-175px);
+    transform: translateX(-200px);
   }
 }
 
-@keyframes animacionNavOcul{
+@keyframes animacion-nav-ocul{
   0%{
     transform: translateX(-175px);
   }
@@ -305,8 +318,7 @@
   }
 }
 
-
-@keyframes animacionNotNavMovile{
+@keyframes animacion-not-nav-mobile{
   0%{
     transform:translateY(0px);
   }
@@ -315,7 +327,7 @@
   }
 }
 
-@keyframes animacionSeeNavMovile{
+@keyframes animacion-see-navmobile{
   0%{
     transform: translateY(-63px);
   }

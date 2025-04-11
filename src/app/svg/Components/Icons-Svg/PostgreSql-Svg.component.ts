@@ -3,6 +3,10 @@ import { Component, input } from "@angular/core";
 @Component({
   selector:`SVG-PosgreSql`,
   styles:`
+    svg{
+      fill:var(--svgColorBase);
+    }
+
   @media(width <= 550px){
     svg{
       width:45px;

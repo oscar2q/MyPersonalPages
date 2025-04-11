@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 @Component({
   selector:`SVG-Reddis`,
   styles:`
+    svg{
+      fill:var(--svgColorBase);
+    }
+
     @media(width <= 550px){
       svg{
         width:30px;
