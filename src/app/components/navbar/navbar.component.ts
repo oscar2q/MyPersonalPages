@@ -9,7 +9,6 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
   imports: [LunaSvg, SolSimpleSvg, MenuOpcional],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  encapsulation:ViewEncapsulation.None,
   animations:[
     trigger('buttomSelect',[
      state('ButtomNight',
