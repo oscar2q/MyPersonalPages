@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AngularComponent } from "../../svg/Components/Icons-Svg/angular.component";
 import { TypescriptIconsSvgComponent } from "../../svg/Components/Icons-Svg/typescript-icons-svg.component";
 import { PostgreSql_SVG } from "../../svg/Components/Icons-Svg/PostgreSql-Svg.component";
-import { NestJsSvg } from "../../svg/Components/Nestjs.component";
+import { NestJsSvg } from '../../svg/Components/Icons-Svg/Nestjs.component';
 import { Reddis_Svg } from "../../svg/Components/Icons-Svg/Reddis.component";
 
 @Component({

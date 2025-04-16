@@ -80,6 +80,21 @@
   }
 }
 
+
+@media(width <= 623px){
+  /*error
+    no error 623px
+
+     - 622
+     - 551
+
+     no error 550px
+  */
+
+
+
+}
+
 @media(width <= 550px){
 
   .circle_ani{

@@ -31,8 +31,41 @@
   row-gap: 7px;
 }
 
+
+@media(width <= 623px){
+
+    .footer_back{
+      border-radius: 8% 8% 0% 0%;
+      background-color: var(--footer);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      font-size: 1.2rem;
+      --height: 18vh;
+      padding: 25px;
+      row-gap: 17px;
+      justify-content: center;
+      margin-top: 30px;
+      align-content: center;
+      align-items: center;
+    }
+  /*error
+    no error 623px
+
+     - 622
+     - 551
+
+     no error 550px
+  */
+
+}
+/*
 @media(width <= 550px){
   .footer_back{
     justify-content: center;
   }
 }
+  */
+
+
+

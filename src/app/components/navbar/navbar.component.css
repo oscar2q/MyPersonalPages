@@ -7,11 +7,12 @@
   flex-direction:row;
   align-items:center;
   display:none;
+  /*
   animation-name: navbarMin;
   animation-timing-function: linear;
   animation-fill-mode: both;
   animation-timeline: scroll(root block);
-  animation-range: 0px 46px;
+  animation-range: 0px 46px;*/
 }
 
 .nav-bar ul li a{
@@ -31,12 +32,15 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+/*
+@ la animaciones no funcionan
   animation-name: nav_bar_animation;
   animation-timing-function: linear;
   animation-fill-mode: both;
   animation-timeline: scroll(root block);
   animation-range: 0px 46px;
-}
+*/
+  }
 
 :where(.nav-bar){
   column-gap: 30px;
@@ -48,7 +52,6 @@
   min-height: 12vh;
 }
 
-
 @keyframes nav_bar_animation{
   to{
         background-color:var(--nav-base-color);
@@ -58,6 +61,8 @@
         backdrop-filter: blur(5px);
       }
 }
+/*
+@Dato mejorar la animacion
 
 @keyframes navbarMin{
   to{
@@ -67,7 +72,7 @@
     backdrop-filter: blur(5px);
   }
 }
-
+*/
 
 .nav-bar ul{
   display: flex;
@@ -221,18 +226,11 @@
 }
 
 @media(max-width:725px){
-  .nav-bar section:nth-child(2),
-  .nav-bar section:nth-child(3){
-    display: none;
-  }
 
   .menuBargur{
     display: block;
-    cursor: pointer;
   }
-}
 
-@media(max-width:580px){
   .nav-bar{
     display: flex;
     flex-direction: column;
@@ -252,7 +250,7 @@
 
   .navbar{
     background-color: var(--base-color-text);
-    transform: translateX(-200px);
+    transform: translateX(-100%);
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -305,7 +303,7 @@
     transform: translateX(0px);
   }
   100%{
-    transform: translateX(-200px);
+    transform: translateX(-100%);
   }
 }
 

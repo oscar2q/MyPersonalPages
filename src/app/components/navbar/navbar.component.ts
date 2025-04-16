@@ -1,4 +1,4 @@
-import { afterRender, Component, ElementRef, inject, OnInit, output, Renderer2, viewChild } from '@angular/core';
+import { afterRender, Component, ElementRef, inject, OnInit, output, Renderer2, viewChild, ViewEncapsulation } from '@angular/core';
 import { LunaSvg } from '../../svg/Components/Icons-Svg/LunaSvg.component';
 import { SolSimpleSvg } from '../../svg/Components/Icons-Svg/SolSimpleSvg.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
@@ -6,9 +6,10 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
 
 @Component({
   selector: 'navbar-component',
-  imports: [LunaSvg, SolSimpleSvg, MenuOpcional,],
+  imports: [LunaSvg, SolSimpleSvg, MenuOpcional],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
+  encapsulation:ViewEncapsulation.None,
   animations:[
     trigger('buttomSelect',[
      state('ButtomNight',
@@ -26,35 +27,10 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
       transition('ButtomNight => ButtomLight',[animate('0.5s')]),
       transition('ButtomLight => ButtomNight',[animate('0.5s')])
     ]),
-
-    trigger('openNav',[
-      state('op',style({
-        transform:'translateY(-63px)'})
-      ),
-      state('ClosedNav',
-        style({
-          transform:'translateY(0px)'
-        })),
-        transition('op => ClosedNav', [animate('0.3s')]),
-        transition('ClosedNav => op',[animate('0.5s')] )
-    ]),
-
-    trigger('navSelect',[
-        state('opend',
-          style({
-              transform:'translateX(-200px)'
-          })),
-          state('closed',
-            style({
-              transform:'translateX(0px)'
-            })),
-            transition('opend => closed',[animate('0.4s')]),
-            transition('closed => opend',[animate('0.5s')])
-    ])
-
+    /*fin*/
   ],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent{
 
   private render:Renderer2 = inject(Renderer2);
   protected nav = viewChild<ElementRef>('nav');
@@ -63,20 +39,13 @@ export class NavbarComponent implements OnInit {
   public lightNight = false;
 
   protected navVarSee = false;
-  protected mostrar = true;
+  protected mostrar = false;
 
   public flyLight = output<boolean>();
 
   constructor(){
-    afterRender({
-      read:(()=>{
-        this.#VerificationLight();
-      })
-  })
-}
-
-  ngOnInit():void{/*this.#VerificationLight();*/}
-
+    afterRender({ read:(()=>{ this.#VerificationLight(); }) })
+  }
 
    #VerificationLight():void{
     const typeLight = localStorage.getItem('TypeLight');
@@ -103,24 +72,39 @@ export class NavbarComponent implements OnInit {
     this.flyLight.emit(false);
   }
 
-  public navBarSelect():void{
+  protected navPhone():void{
+    this.mostrar = !this.mostrar;
+  }
 
+  public navBarSelect():void{
     this.render.removeClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
     this.render.addClass(this.minNav()?.nativeElement,'minnavNotSee');
     console.log(this.render.addClass(this.minNav()?.nativeElement,'minnavNotSee' ));
     this.render.removeClass(this.nav()?.nativeElement,'navBarSelect');
     this.render.addClass(this.nav()!.nativeElement,'navBarNotSelect');
-
   }
 
   public ocultoBarSelect():void{
-
     this.render.removeClass(this.nav()?.nativeElement,'navBarNotSelect');
     this.render.addClass(this.nav()?.nativeElement,'navBarSelect');
-
     this.render.removeClass(this.minNav()?.nativeElement,'minnavNotSee');
     this.render.addClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
+  }
+
+  /*
+  protected hidingNavbarPhone():void{
+    this.minNav()!.nativeElement.animations([
+      {transform:'translateY(0px)'},
+      {transform:'translateY(-63px)'}],
+      {duration:'0.5s',iterations:'forwards'}
+    );
+
+    this.nav()!.nativeElement.animations([
+      {transform:'translateX(-175px)'},
+      {transform:'translateX(0px)'}
+    ],{duration:'0.5s',iterations:'forwards'})
 
   }
+*/
 
 }

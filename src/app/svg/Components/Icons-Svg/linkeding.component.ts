@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   }
   `,
   template:`
-  <a class="linke" href="">
+  <a class="linke" href="https://www.linkedin.com/in/oscar-victory-44b706238/">
       <svg width="31" height="31" viewBox="0 0 175 151" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Likend">
         <rect id="Rectangle" width="175" height="151" rx="20" fill="#D9D9D9"/>
