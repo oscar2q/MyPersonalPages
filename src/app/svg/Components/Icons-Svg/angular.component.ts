@@ -7,20 +7,19 @@ import { Component, computed, effect, ElementRef, inject, input, Renderer2, view
 
   svg{
     fill:var(--svgColorBase);
-
   }
 
   @media(width <= 550px){
     svg{
           width:45px;
           height:45px;
-     }
+      }
   }
   `,
   template: `
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	        width="55px" height="55px" fill="white" viewBox="0 0 960 960" style="enable-background:new 0 0 960 960;"
+	        width="55px" height="55px" fill="#f4c2c2" viewBox="0 0 960 960" style="enable-background:new 0 0 960 960;"
           xml:space="preserve" >
           <g>
 	          <polygon points="562.6,109.8 804.1,629.5 829.2,233.1" />

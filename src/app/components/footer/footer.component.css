@@ -59,13 +59,14 @@
   */
 
 }
-/*
-@media(width <= 550px){
+
+@media(width <= 630px){
   .footer_back{
     justify-content: center;
+    align-items: center;
   }
 }
-  */
+
 
 
 

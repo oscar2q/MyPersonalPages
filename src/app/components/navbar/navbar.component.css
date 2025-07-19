@@ -7,12 +7,11 @@
   flex-direction:row;
   align-items:center;
   display:none;
-  /*
   animation-name: navbarMin;
   animation-timing-function: linear;
   animation-fill-mode: both;
   animation-timeline: scroll(root block);
-  animation-range: 0px 46px;*/
+  animation-range: 0px 46px;
 }
 
 .nav-bar ul li a{
@@ -32,14 +31,11 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-/*
-@ la animaciones no funcionan
   animation-name: nav_bar_animation;
   animation-timing-function: linear;
   animation-fill-mode: both;
   animation-timeline: scroll(root block);
   animation-range: 0px 46px;
-*/
   }
 
 :where(.nav-bar){
@@ -61,8 +57,6 @@
         backdrop-filter: blur(5px);
       }
 }
-/*
-@Dato mejorar la animacion
 
 @keyframes navbarMin{
   to{
@@ -72,7 +66,16 @@
     backdrop-filter: blur(5px);
   }
 }
-*/
+
+@keyframes navbarMobile{
+  to{
+     background-color:var(--nav-base-color);
+     --border-radius: 0px 0px 25px 25px;
+     box-shadow: 0px 0px 5px 0px var(--linksH);
+     z-index: 1;
+     backdrop-filter: blur(5px);
+  }
+}
 
 .nav-bar ul{
   display: flex;
@@ -90,7 +93,6 @@
 }
 .nav-bar ul li a{
   list-style: none;
-
 }
 
 .menuBargur{
@@ -250,7 +252,7 @@
 
   .navbar{
     background-color: var(--base-color-text);
-    transform: translateX(-100%);
+    transform: translateX(-200%);
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -272,6 +274,14 @@
   .nav-bar section:nth-child(2),
   .nav-bar section:nth-child(3){
     display: flex;
+  }
+/* animation */
+  .minnavAnimation{
+    animation-name: navbarMobile;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 46px;
   }
 
 /* y = 0 y = -63 */
@@ -298,6 +308,8 @@
 
 }
 
+
+
 @keyframes animacion-nav-Later{
   0%{
     transform: translateX(0px);
@@ -315,6 +327,8 @@
     transform: translateX(0px);
   }
 }
+
+
 
 @keyframes animacion-not-nav-mobile{
   0%{

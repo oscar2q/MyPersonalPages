@@ -7,6 +7,7 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
 @Component({
   selector: 'navbar-component',
   imports: [LunaSvg, SolSimpleSvg, MenuOpcional],
+  encapsulation:ViewEncapsulation.None,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
   animations:[
@@ -78,32 +79,18 @@ export class NavbarComponent{
   public navBarSelect():void{
     this.render.removeClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
     this.render.addClass(this.minNav()?.nativeElement,'minnavNotSee');
-    console.log(this.render.addClass(this.minNav()?.nativeElement,'minnavNotSee' ));
+
     this.render.removeClass(this.nav()?.nativeElement,'navBarSelect');
     this.render.addClass(this.nav()!.nativeElement,'navBarNotSelect');
+
   }
 
   public ocultoBarSelect():void{
     this.render.removeClass(this.nav()?.nativeElement,'navBarNotSelect');
     this.render.addClass(this.nav()?.nativeElement,'navBarSelect');
+
     this.render.removeClass(this.minNav()?.nativeElement,'minnavNotSee');
     this.render.addClass(this.minNav()?.nativeElement,'navbarSelectDisguise');
   }
-
-  /*
-  protected hidingNavbarPhone():void{
-    this.minNav()!.nativeElement.animations([
-      {transform:'translateY(0px)'},
-      {transform:'translateY(-63px)'}],
-      {duration:'0.5s',iterations:'forwards'}
-    );
-
-    this.nav()!.nativeElement.animations([
-      {transform:'translateX(-175px)'},
-      {transform:'translateX(0px)'}
-    ],{duration:'0.5s',iterations:'forwards'})
-
-  }
-*/
 
 }

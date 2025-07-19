@@ -1,6 +1,8 @@
+/*eliminar o guardar colores no utilizados*/
 *{
   --base-color-navbar-light:rgb(142 190 222 / 60%);
   --color-rosa-Claro:#ffc0cb;
+  --color-Svg-light:#f4c2c2;
   --color-lightPing:#ffb6c1;
   --color-HotPink:#ff69b4;
   --color-roseRoes:#FF1493;
@@ -24,6 +26,8 @@
   margin: 0px;
   list-style: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  scrollbar-color: #F19CBB var(--base-color-night);
+  scrollbar-width: thin;
 
   ::selection{
     color: var(--Color-Pink);
@@ -43,7 +47,7 @@ button{
 /*inicio de darck mode*/
 .class_Mode_Light{
   --menuBar:var(--base-color-night);
-  --svgColorBase:var(--base-Color-white);
+  --svgColorBase:var(--color-Svg-light);
   --footer:#cccccc;
   --text:var(--base-color-night);
   --circle:var(--base-color-night);

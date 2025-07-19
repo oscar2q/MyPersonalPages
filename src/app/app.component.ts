@@ -24,7 +24,7 @@ import { HerramientasComponent } from './components/herramientas/herramientas.co
 export class AppComponent  implements OnInit{
 
   #render2:Renderer2 = inject(Renderer2);
-  #titletwo = signal<string[]>(['Hola Soy victory','Mira es un DVD','Stratovarius','Hola...']);
+  #titletwo = signal<string[]>(['Hola Soy victory','Mira es un CD','Stratovarius','Hola...']);
   public SobreMi = viewChild<ElementRef>('sobreMi');
   public spaceCenter = viewChild<ElementRef>('viewCenterStar');
   public spaceCenterCircles = viewChild<ElementRef>('viewCenterCenter');
