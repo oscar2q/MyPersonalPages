@@ -43,14 +43,14 @@
 
 .gir_two{
   height: 19rem;
-  width: 19rem;
+  width: 32rem;
   position: absolute;
 }
 
 :where(.circle_anitwo){
   position: absolute;
-  width: 14.3rem;
-  height: 14.0rem;
+  width: 18.3rem;
+  height: 19.0rem;
 }
 
 .itemCircles{
