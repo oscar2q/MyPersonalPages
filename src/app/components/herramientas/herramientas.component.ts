@@ -23,7 +23,7 @@ import { Reddis_Svg } from "../../svg/Components/Icons-Svg/Reddis.component";
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
-    color:var(--base-color-night);
+    color:var(--text);
     }
 
     .toolsLimit{

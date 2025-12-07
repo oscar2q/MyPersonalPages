@@ -54,26 +54,29 @@ button{
   --linksH:var(--color-roseRoes);
   --nav-base-color:#d8d8d8;
   --base-color:var(--base-color-night);
-  --base-color-text:var(--base-Color-white);
+  --base-color-text:var(--base-color-night);
   background-color: var(--base-Color-nieve);
   color: var(--base-Color-nieve);
-
+  --navbar-color-phone:var(--base-Color-white);
+  --navbar-color-selectPhone:var(--base-Color-white);
 }
 
 .Mode_Dark{
-  --menuBar:var(--base-Color-nieve);
-  --svgColorBase:var(--base-color-night);
+  --menuBar:var(--base-Color-white);
+  --svgColorBase:var(--base-Color-nieve);
   --nav-base-color:var(--base-color-night);
   --footer:#ebebeb;
-  --text:--var(--base-color-night);
-  --circle:var(--base-color-night);
+  --text:var(--base-Color-nieve);
+  --circle:var(--base-Color-nieve);
   --linksH:var(--color-HotPink);
-  --base-color:var(--base-Color-white);
-  --base-color-text:var(--base-color-night);
+  --base-color:var(--base-color-night);
+  --base-color-text:var(--base-Color-nieve);
   background-color: var(--base-color);
-  color: var(--base-color-text);
+  color: var(--base-Color-nieve);
+  --navbar-color-phone:var(--base-color-night);
+  --navbar-color-selectPhone:var(--base-color-night);
 }
 
-:where(body){
-  background-color: var(--base-color-night);
-}
+
+
+

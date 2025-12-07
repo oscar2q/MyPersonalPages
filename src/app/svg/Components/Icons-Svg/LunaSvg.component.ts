@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
+  changeDetection:ChangeDetectionStrategy.OnPush,
   selector:`SVG-Luna`,
   template:`
     <svg width="27" height="26" viewBox="0 0 45 76" fill="none" xmlns="http://www.w3.org/2000/svg">

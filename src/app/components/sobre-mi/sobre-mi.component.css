@@ -2,8 +2,8 @@
   box-sizing: border-box;
   position: relative;
   z-index: 0;
-  --background-color: #0C0C1D;
   height: 95vh;
+  min-height: 520px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,24 @@
   row-gap: 25px;
 }
 
+.animationiewcroll{
+  animation-name: animationViewMe;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: scroll(root block);
+  animation-range:10% 35%;
+}
+
+@keyframes animationViewMe{
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
 .tarject{
   padding: 10px;

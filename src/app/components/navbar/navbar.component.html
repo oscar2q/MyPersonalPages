@@ -1,5 +1,6 @@
 <div class="minNav" #minNav>
     <button
+      title="hambuers"
       (click)="navBarSelect()"
       type="button" >
         <SVG-Menu/>
@@ -21,18 +22,16 @@
       <li class="select_item"><a href="#sobremi">Sobre Mi</a></li>
       <li class="select_item"><a href="#proyects">Proyectos</a></li>
       <li class="select_item"><a  href="#herramientas">Herramientas</a></li>
-      <!----
-        <li class="select_item"><a >Experiencia</a></li>
-        <li class="select_item"><a >Contactame</a></li>
-      ---->
     </ul>
     </section>
     <section class="ButtomOnOff">
+
       <div
-      [@buttomSelect]="lightNight ? 'ButtomNight' : 'ButtomLight'"
+      #buttomLN
       id="animacion"
       class="animacionButtom">
       </div>
+
     <button
       type="button"
       (click)="bttPagesNight()"
@@ -47,12 +46,5 @@
       <SVG-SolSimple />
     </button>
     </section>
-    <!-----
-    <section>
-    <ul>
-      <li>Esp/Ing</li>
-    </ul>
-    </section>
-  ---->
   </section>
 </nav>

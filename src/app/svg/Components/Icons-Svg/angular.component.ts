@@ -1,4 +1,4 @@
-import { Component, computed, effect, ElementRef, inject, input, Renderer2, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, ElementRef, inject, input, Renderer2, viewChild } from '@angular/core';
 
 @Component({
   selector: 'SVG-angular',
@@ -28,7 +28,8 @@ import { Component, computed, effect, ElementRef, inject, input, Renderer2, view
 	          <polygon points="396.6,109.8 130,233.1 155.1,629.5 	"/>
           </g>
       </svg>
-  `
+  `,
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class AngularComponent {
   private render2:Renderer2 = inject(Renderer2);

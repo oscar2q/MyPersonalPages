@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector:'SVG-Facebook',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
        fill: #0175D8;
   }
   `,
+  changeDetection:ChangeDetectionStrategy.OnPush,
   template:`
   <a href="https://www.facebook.com/people/Victor-Navarro/pfbid038FtaBYMmf66AG1dmpnR8mYFRV5fFiXt1qgP5ED5J3fYrehrnqe8r3wtQxJ91T3oxl/">
       <svg class="facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="25" height="30">

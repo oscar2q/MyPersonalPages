@@ -1,7 +1,6 @@
-import { afterRender, Component, ElementRef, inject, OnInit, output, Renderer2, viewChild, ViewEncapsulation } from '@angular/core';
+import { afterEveryRender, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, inject, OnInit, output, Renderer2, viewChild, ViewEncapsulation } from '@angular/core';
 import { LunaSvg } from '../../svg/Components/Icons-Svg/LunaSvg.component';
 import { SolSimpleSvg } from '../../svg/Components/Icons-Svg/SolSimpleSvg.component';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
 
 @Component({
@@ -10,51 +9,32 @@ import { MenuOpcional } from "../../svg/Components/Icons-Svg/menu.component";
   encapsulation:ViewEncapsulation.None,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  animations:[
-    trigger('buttomSelect',[
-     state('ButtomNight',
-         style({
-           transform:'translateX(56px)',
-           boxShadow:'-1px 0px 2px rgb(235, 235, 235)',
-           backgroundColor:'#ffd280'
-         })
-       ),
-       state('ButtomLight',
-         style({
-           transform:'translateX(0px)',
-           boxShadow:'-1px 0px 2px #353535'
-         })),
-      transition('ButtomNight => ButtomLight',[animate('0.5s')]),
-      transition('ButtomLight => ButtomNight',[animate('0.5s')])
-    ]),
-    /*fin*/
-  ],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent{
 
   private render:Renderer2 = inject(Renderer2);
   protected nav = viewChild<ElementRef>('nav');
   protected minNav = viewChild<ElementRef>('minNav');
-
-  public lightNight = false;
+  protected buttomLightNight = viewChild<ElementRef>('buttomLN');
 
   protected navVarSee = false;
   protected mostrar = false;
 
   public flyLight = output<boolean>();
 
-  constructor(){
-    afterRender({ read:(()=>{ this.#VerificationLight(); }) })
+  constructor(private ref: ChangeDetectorRef){
+    afterEveryRender({ write:(()=>{ this.#VerificationLight(); }) })
   }
 
    #VerificationLight():void{
     const typeLight = localStorage.getItem('TypeLight');
     if(typeLight){
         if(typeLight === 'class_Mode_Light'){
-          this.lightNight = true;
+          this.render.addClass(this.buttomLightNight()?.nativeElement,'buttomNight');
           return;
         }else if(typeLight === 'Mode_Dark'){
-          this.lightNight = false;
+          this.render.addClass(this.buttomLightNight()?.nativeElement,'buttomLight');
           return;
         }
         return;
@@ -63,13 +43,17 @@ export class NavbarComponent{
   }
 
   public bttPagesSon():void{
-    this.lightNight = true;
+    this.render.addClass(this.buttomLightNight()?.nativeElement , 'buttomNight');
+    this.render.removeClass(this.buttomLightNight()?.nativeElement,'buttomLight');
     this.flyLight.emit(true);
+    //this.ref.markForCheck();
   }
 
   public bttPagesNight():void{
-    this.lightNight = false;
+    this.render.addClass(this.buttomLightNight()?.nativeElement , 'buttomLight');
+    this.render.removeClass(this.buttomLightNight()?.nativeElement,'buttomNight');
     this.flyLight.emit(false);
+    //this.ref.markForCheck();s
   }
 
   protected navPhone():void{

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector:'SVG-Linkeding',
@@ -17,6 +17,7 @@ import { Component } from '@angular/core';
         </g>
       </svg>
   </a>
-  `
+  `,
+  changeDetection:ChangeDetectionStrategy.OnPush,
 })
 export class LinkedingSvg{}

@@ -1,35 +1,11 @@
 <navbar-component (flyLight)="ColorCenterStar($event)" />
-<section #viewCenterStar class="cajaPrincipal" >
-  <div class="gir_one">
-    <p class="itemCircles">
-      <SVG-angular/>
-    </p>
-    <p class="itemCircles">
-      <SVG-Estrella />
-    </p>
-    <p class="itemCircles">
-      <SVG-Estrella />
-    </p>
-    <p class="itemCircles">
-      <SVG-typescript />
-    </p>
-    <div class="gir_one gir_two">
-      <p class="itemCircles delaysCirclesBig">
-        <SVG-Reddis />
-      </p>
-      <p class="itemCircles delaysCirclesBig">
-        <SVG-Estrella />
-      </p>
-      <p class="itemCircles delaysCirclesBig">
-        <SVG-Estrella />
-      </p>
-      <p class="itemCircles delaysCirclesBig">
-        <SVG-PosgreSql />
-      </p>
-    </div>
-    <div #viewCenterCenter class="circle_ani"></div>
-    <div #viewCenterCentersm class="circle_ani circle_anitwo"></div>
-  </div>
+<section class="cajaPrincipal" >
+  <galaxyComponentAnimation
+  />
+  <canvas
+    id="startElement" width="1170"
+    height="630" #pacCanvas>
+  </canvas>
 </section>
 <Sobre-mi />
 <proyects />

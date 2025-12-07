@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
   selector:'SVG-Menu',
@@ -23,5 +23,6 @@ import { Component } from "@angular/core";
     </g>
   </svg>
   `,
+  changeDetection:ChangeDetectionStrategy.OnPush,
 })
 export class MenuOpcional{}

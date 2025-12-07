@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 export const routes: Routes = [
   { path:'', component:AppComponent },
 ];
-
+/*
 NgModule({
   imports:[RouterModule.forRoot(routes,{
     anchorScrolling:'enabled',
@@ -14,3 +14,4 @@ NgModule({
   exports:[RouterModule]
 })
 export class RouterIndex{}
+*/

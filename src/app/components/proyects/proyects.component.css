@@ -1,10 +1,15 @@
 a{
   text-align: center;
-  color: black;
+  color: var(--text);
   text-decoration: none;
 }
 
+.description{
+  font-size: 1.2rem;
+}
+
 .PCards {
+  overflow: clip;
   box-sizing: border-box;
   /* height: 70vh; */
   margin-top: 50px;
@@ -16,6 +21,7 @@ a{
   column-gap: 15px;
   row-gap: 20px;
   padding: 15px;
+  overflow: clip;
 
   color:var(--text);
   justify-content: center;
@@ -47,5 +53,30 @@ a{
   column-gap: 30px;
   flex-wrap: nowrap;
   align-items: center;
-
 }
+
+.animationscrollproyect{
+  overflow-x: clip;
+   animation-name: proyects;
+   animation-timing-function: linear;
+   animation-fill-mode: both;
+   animation-timeline: view();
+  --animation-range:0px 396px;
+   animation-range:10% 35%;
+}
+
+@keyframes proyects{
+  from{
+      overflow-x: clip;
+
+    opacity: 0;
+    transform: translateX(170px);
+  }
+  to{
+      overflow-x: clip;
+
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+

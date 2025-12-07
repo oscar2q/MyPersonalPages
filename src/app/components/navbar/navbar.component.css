@@ -2,7 +2,7 @@
   padding-left:20px;
   height:60px;
   width:100%;
-  background-color:var(--nav-base-color);
+  --background-color:var(--nav-base-color);
   display:flex;
   flex-direction:row;
   align-items:center;
@@ -15,13 +15,14 @@
 }
 
 .nav-bar ul li a{
+  font-size: 1.1rem;
   text-decoration: none;
-  color: var(--base-color);
+  color: var(--text);
 }
 
 :where(.navbar){
-  background-color: var(--base-color-text);
-  color: var(--base-color);
+  background-color: var(--nav-base-color);
+  color: var(--base-color-text);
   width: 100%;
   min-height: 60px;
   column-gap: 20px;
@@ -155,6 +156,19 @@
   animation-range: 0px 150px;
 }
 
+.buttomNight{
+  transform:translateX(56px);
+  background-Color: #ffd280;
+  box-shadow: -1px 0px 2px rgb(235, 235,235);
+  transition: ease 3s;
+}
+
+.buttomLight{
+  transform:translateX(0px);
+  box-shadow:-1px 0px 2px #353535;/*1d1d1d*/
+  background-Color: #1d1d1d;
+}
+
 @keyframes animation_buttom{
   to{
     box-shadow:0px 0px 5px 3px #F1EBD3
@@ -186,11 +200,12 @@
   box-shadow: 1px 0px 1px #5c799a;
   border-right: 0px #353535;
   position: absolute;
-  background-color: #1d1d1d;
+  --background-color: #1d1d1d;
   height: 100%;
   width: 50%;
   z-index: 0;
   border-radius: 5px;
+  transition: 0.3s ease;
 }
 
 .animacionMoonSelect{
@@ -304,6 +319,13 @@
 /* x = 175 x = 0 */
   .navBarNotSelect{
     animation: animacion-nav-ocul forwards 0.5s;
+    svg line{
+      stroke:var(--navbar-color-selectPhone);
+    }
+  }
+
+  .nav-bar ul li a{
+    color: var(--navbar-color-selectPhone);
   }
 
 }
@@ -347,3 +369,11 @@
     transform: translateY(0px);
   }
 }
+/*
+  @media(min-width:159px){
+    .navbar{
+      min-width:159px;
+      min-height: 262px;
+    }
+  }
+*/

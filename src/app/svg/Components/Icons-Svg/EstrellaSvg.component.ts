@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector:'SVG-Estrella',
@@ -23,6 +23,8 @@ import { Component } from '@angular/core';
         <path id="Polygon 2" d="M25.1856 50.0925L3.39578 12.6732L46.6967 12.5124L25.1856 50.0925Z" fill="white"/>
         </g>
       </svg>
-  `
+  `,
+  changeDetection:ChangeDetectionStrategy.OnPush
+
 })
 export class EstrellaSvg{}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AngularComponent } from '../../svg/Components/Icons-Svg/angular.component';
 import { PostgreSql_SVG } from '../../svg/Components/Icons-Svg/PostgreSql-Svg.component';
 import { NestJsSvg } from '../../svg/Components/Icons-Svg/Nestjs.component';
@@ -6,7 +6,9 @@ import { NestJsSvg } from '../../svg/Components/Icons-Svg/Nestjs.component';
   selector: 'proyects',
   imports: [AngularComponent,PostgreSql_SVG,NestJsSvg],
   templateUrl: './proyects.component.html',
-  styleUrl: './proyects.component.css'
+  styleUrl: './proyects.component.css',
+  changeDetection:ChangeDetectionStrategy.OnPush
+
 })
 export class ProyectsComponent {
 
