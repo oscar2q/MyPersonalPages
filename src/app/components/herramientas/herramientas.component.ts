@@ -9,7 +9,6 @@ import { Reddis_Svg } from "../../svg/Components/Icons-Svg/Reddis.component";
   selector: 'app-herramientas',
   imports: [AngularComponent, TypescriptIconsSvgComponent, PostgreSql_SVG, NestJsSvg, Reddis_Svg],
   styles:`
-
     .tools{
     row-gap: 22px;
     margin-top: 79px;
@@ -60,11 +59,31 @@ import { Reddis_Svg } from "../../svg/Components/Icons-Svg/Reddis.component";
     }
   }
 
+  .aniamtionscrollkits{
+    overflow-x:clip;
+    animation-name:snimstionKits;
+    animation-timing-function:linear;
+    animation-fill-mode:both;
+    animation-timeline: view();
+    animation-range:10% 35%;
+  }
+
+  @keyframes snimstionKits{
+    from{
+      opacity:0;
+      transform:translate(-170px);
+    }
+    to{
+      opacity:1;
+      transform:translate(0px);
+    }
+  }
+
   `,
   template:`
     <section id="herramientas" class="tools">
-      <h1>Herramientas</h1>
-      <div class="toolsLimit">
+      <h1 class="aniamtionscrollkits">Herramientas</h1>
+      <div class="toolsLimit aniamtionscrollkits">
         <div class="toolsSecAnim">
           <p>
             <SVG-angular />

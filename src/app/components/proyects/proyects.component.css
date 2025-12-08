@@ -67,8 +67,7 @@ a{
 
 @keyframes proyects{
   from{
-      overflow-x: clip;
-
+    overflow-x: clip;
     opacity: 0;
     transform: translateX(170px);
   }
