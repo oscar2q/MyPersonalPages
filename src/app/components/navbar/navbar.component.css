@@ -186,7 +186,7 @@
   flex-wrap: wrap;
   row-gap: 10px;
   column-gap: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   align-items: center;
   align-content: center;
 }
@@ -197,7 +197,7 @@
 }
 
 .animacionButtom{
-  box-shadow: 1px 0px 1px #5c799a;
+  box-shadow: 1px 0px 7px var(--botomLight);
   border-right: 0px #353535;
   position: absolute;
   --background-color: #1d1d1d;
