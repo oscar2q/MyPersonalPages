@@ -47,7 +47,7 @@ a{
   border:none;
 }
 
-@media(width>=320px){
+@media(width<=320px){
   .proyectsCards{
     width: 100%;
   }
