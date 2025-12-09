@@ -11,12 +11,12 @@ import { NestJsSvg } from '../../svg/Components/Icons-Svg/Nestjs.component';
 
 })
 export class ProyectsComponent {
-/*
+
   constructor(){
     afterNextRender(()=>{
       console.log(window.innerHeight);
       console.log(window.innerWidth);
   })
   }
-*/
+
 }
