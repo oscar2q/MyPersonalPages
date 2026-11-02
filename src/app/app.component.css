@@ -1,6 +1,4 @@
 :where(.cajaPrincipal){
-  isolation: isolate;
-
   /*arriba eliminar*/
   position: relative;
   display: flex;
