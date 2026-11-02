@@ -2,7 +2,7 @@
   box-sizing: border-box;
   position: relative;
   z-index: 0;
-  height: 95vh;
+  --height: 95vh;
   min-height: 520px;
   width: 100%;
   display: flex;
@@ -46,87 +46,29 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 57px;
+  column-gap: 65px;
   font-size: 1.7rem;
 }
 
 
 .butme{
-  box-sizing: border-box;
-  background-color:var(--base-color-night) ;
-  position: relative;
-  border-radius: 10px;
-  border: 3.9px solid;
-  border-color:
-  var(--color_morado) /*arriba*/
-  var(--color_morado)/*derecha*/
-  var(--color_rojo)/*izquierda*/
-  var(--color_rojo);/*abajo*/
-  color: white;
-  height: 63px;
-  width: 190px;
-  margin-top: 27px;
-  font-size: 1.3rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  animation: color_border ease 30s infinite;
-  cursor: pointer;
+    height: 39px;
+    width: 245px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    --padding: 0 26px;
+    border-radius: 12px;
+    border: 2px solid #f27aa6;
+    color: #f3f2fa;
+    font-weight: 700;
+    font-size: 17px;
+    transition-duration: 1s;
 }
 
-.butme::after{
-    background-image: linear-gradient(
-      180deg,
-        var(--color_morado), /*arriba*/
-        var(--color_morado),/*derecha*/
-        var(--color_rojo),/*izquierda*/
-        var(--color_rojo)/*abajo*/
-    );
-    background-clip: padding-box;
-    z-index: -1;
-    margin-top: -46px;
-    margin-left: -183px;
-    content: "";
-    position: absolute;
-    height: 126px;
-    width: 216px;
-    filter: blur(30px);
-    border-radius: 40px;
-    animation: color_wheel ease 30s infinite;
-}
-
-@keyframes color_border{
-  0%{
-      border-color: white;
-  }
-  15%{
-      border-color:
-      var(--color_morado)
-      var(--color_morado)
-      var(--color_rojo)
-      var(--color_rojo);
-  }
-  35%{
-      border-color: white;
-  }
-  50%{
-      border-color:
-      var(--color_morado)
-      var(--color_rojo)
-      var(--color_rojo)
-      var(--color_rojo);
-  }
-  80%{
-    border-color: white;
-  }
-  90%{
-        border-color:
-      var(--color_rojo)
-      var(--color_rojo)
-      var(--color_rojo)
-      var(--color_rojo);
-  }
-  100%{
-    border-color: white;
-  }
+.butme:hover{
+  background-color: rgb(242, 122, 166, .35)
 }
 
 @keyframes color_wheel {
@@ -171,4 +113,16 @@
     flex-direction: column;
     row-gap: 40px;
   }
+}
+
+
+.liveSonic{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.textColorPalido{
+  color:#b9b8d0;
+  font-size: 1.3rem;
 }

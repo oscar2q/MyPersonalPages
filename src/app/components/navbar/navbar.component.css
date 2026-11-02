@@ -95,6 +95,9 @@
 .nav-bar ul li a{
   list-style: none;
 }
+.nav-bar ul li a:hover{
+  color: #f27aa6;
+}
 
 .menuBargur{
   display: none;
@@ -165,8 +168,8 @@
 
 .buttomLight{
   transform:translateX(0px);
-  box-shadow:-1px 0px 2px #353535;/*1d1d1d*/
-  background-Color: #1d1d1d;
+  --box-shadow:-1px 0px 2px #353535;/*1d1d1d*/
+  background-Color: #f27aa6;
 }
 
 @keyframes animation_buttom{
@@ -176,8 +179,9 @@
 }
 
 .ButtomOnOff{
+  border: 1px solid #34345a;
   position:relative;
-  background-color: #D3D3D3;
+  background-color: #0b0b1c;
   height: 38px;
   width: 110px;
   display: flex;
@@ -197,7 +201,7 @@
 }
 
 .animacionButtom{
-  box-shadow: 1px 0px 7px var(--botomLight);
+  --box-shadow: 1px 0px 7px var(--botomLight);
   border-right: 0px #353535;
   position: absolute;
   --background-color: #1d1d1d;

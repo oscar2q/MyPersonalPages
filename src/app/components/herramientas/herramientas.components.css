@@ -1,0 +1,106 @@
+.tools{
+    box-sizing: border-box;
+    padding: 20px;
+    row-gap: 22px;
+    margin-top: 79px;
+    margin-bottom: 75px;
+    display: flex;
+    width: 100%;
+    --background: green;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: var(--text);
+    justify-content: center;
+
+}
+
+.titleTools{
+  font-size: 3rem;
+}
+
+.toolsLimit{
+       display: flex;
+       height: 70%;
+       width: 38%;
+       --background-color: brown;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+       overflow: hidden;
+}
+
+.toolsSecAnim{
+    height: 79%;
+    --background-color: aquamarine;
+    transform: translateX(24%);
+    display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    animation: animationsTools linear 20s infinite;
+}
+
+@keyframes animationsTools{
+    0%{
+      transform: translateX(24%);
+    }
+    100%{
+      transform:  translateX(-29%);
+    }
+  }
+
+.aniamtionscrollkits{
+    overflow-x:clip;
+    animation-name:snimstionKits;
+    animation-timing-function:linear;
+    animation-fill-mode:both;
+    animation-timeline: view();
+    animation-range:10% 35%;
+}
+
+@keyframes snimstionKits{
+    from{
+      opacity:0;
+      transform:translate(-170px);
+    }
+    to{
+      opacity:1;
+      transform:translate(0px);
+    }
+}
+
+.toolsAll{
+  display: flex;
+  column-gap: 50px;
+  justify-content: space-between;
+}
+
+.frontend{
+  border-top: 3px solid rgb(232 138 143);
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+
+  & header{
+    font-size: 1.3rem;
+    color: #b9b8d0;
+  }
+}
+
+.toolsD{
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.titleF{
+  font-size: 1.7rem;
+}
+
+.parrafoDesc{
+  color: #b9b8d0;
+}

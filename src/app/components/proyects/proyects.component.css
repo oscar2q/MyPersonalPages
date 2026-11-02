@@ -1,50 +1,49 @@
-a{
+a {
   text-align: center;
   color: var(--text);
   text-decoration: none;
 }
 
 .description{
-  font-size: 1.2rem;
+  color:#b9b8b0;
+  font-size: 1.4rem;
 }
 
-.PCards {
+.PCards{
   overflow: clip;
   box-sizing: border-box;
-  /* height: 70vh; */
-  margin-top: 50px;
+  --margin-top: 30px;
   width: 100%;
-  --background-color:var(--base-color-night);
   display: flex;
-  flex-direction: column;
+  --flex-direction: column;
   flex-wrap: wrap;
   column-gap: 15px;
   row-gap: 20px;
   padding: 15px;
   overflow: clip;
-
   color:var(--text);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .proyectsCards {
   box-sizing: border-box;
   height: 363px;
-  width: 380px;/*aqui*/
+  width: 100%;
   padding: 15px;
   display: flex;
   row-gap: 10px;
   --background-color: aqua;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-}
+  column-gap: 40px;
 
-.proyectsCards img{
-  height: 195px;
-  width: 380px;
-  border-radius: 10px;
-  border:none;
+  & img{
+      height: 280px;
+      width: 380px;
+      border-radius: 10px;
+      border:none;
+  }
 }
 
 @media(width<=460px){
@@ -67,13 +66,18 @@ a{
 }
 
 .animationscrollproyect{
-  overflow-x: clip;
+   overflow-x: clip;
    animation-name: proyects;
    animation-timing-function: linear;
    animation-fill-mode: both;
    animation-timeline: view();
-  --animation-range:0px 396px;
    animation-range:10% 35%;
+}
+
+.titleProyects{
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+  padding-left: 15px;
 }
 
 @keyframes proyects{
@@ -90,3 +94,37 @@ a{
   }
 }
 
+.sectionExplainTools{
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  & h3{
+    font-size: 2.2rem;
+  }
+}
+
+.tools{
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #34345a;
+    background: #15152e;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.sectionenlaces{
+   display: flex;
+   column-gap: 40px;
+   font-size: 1.2rem;
+}
+
+.enlaces {
+    color: #f3f2fa;
+    font-weight: 700;
+    border-bottom: 2px solid #f27aa6;
+    transition-duration: 1s;
+}
+
+.enlaces:hover{
+  color: #f27aa6;
+}
