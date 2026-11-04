@@ -1,5 +1,19 @@
 /*eliminar o guardar colores no utilizados*/
 *{
+
+  /*2.0color*/
+  --base-Rose-Main:#f27aa6;
+  /*night*/
+  --base-two-textM-night:#f3f2fa;
+  --base-two-textm-night:#b9b8d0;
+  --background-two-night:#15152e;
+  --border-two-night:#34345a;
+  /*light*/
+  --base-two-textM-light:#17162b;
+  --base-two-textm-light:#b9b8d0;
+  --background-two-light:#ffffff;
+  --boder-two-light:#cfcae2;
+  /*end 2.0*/
   --base-color-navbar-light:rgb(142 190 222 / 60%);
   --color-rosa-Claro:#ffc0cb;
   --color-Svg-light:#f4c2c2;
@@ -44,8 +58,15 @@ button{
   background-color: transparent;
 }
 
-/*inicio de darck mode*/
+/*inicia con darck mode*/
 .class_Mode_Light{
+  /*2.0*/
+  --textM:var(--base-two-textM-light);
+  --textm:var(--base-two-textm-light);
+  --backgroun:var(--background-two-light);
+  --boder:var(--boder-two-light);
+  /*2.0*/
+
   --menuBar:var(--base-color-night);
   --svgColorBase:var(--color-Svg-light);
   --footer:#fafafa;
@@ -60,15 +81,19 @@ button{
   --navbar-color-phone:var(--base-Color-white);
   --navbar-color-selectPhone:var(--base-Color-white);
   --botomLight:#b2f2ff;
-
 }
 
 .Mode_Dark{
+  /*2.0*/
+  --textM:var(--base-two-textM-night);
+  --textm:var(--base-two-textm-night);
+  --backgroun:var(--background-two-night);
+  --boder:var(--border-two-night);
+  /*2.0*/
   --menuBar:var(--base-Color-white);
   --svgColorBase:var(--base-Color-nieve);
   --nav-base-color:var(--base-color-night);
   --footer:#ebebeb;
-  --text:var(--base-Color-nieve);
   --circle:var(--base-Color-nieve);
   --linksH:var(--color-HotPink);
   --base-color:var(--base-color-night);

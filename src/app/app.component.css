@@ -1,5 +1,6 @@
 :where(.cajaPrincipal){
-  /*arriba eliminar*/
+  isolation: isolate;
+  /*eliminar*/
   position: relative;
   display: flex;
   align-items: center;
@@ -15,7 +16,6 @@
 :where(#startElement){
   height: 100vh;
   width: 100%;
-  --background-color: beige;
   overflow: clip;
   position: absolute;
   top: 0;
@@ -32,7 +32,6 @@
 
 .presentacion{
   box-sizing: border-box;
-  --background-color: orange;
   width: 57%;
   height: 100%;
   display: flex;
@@ -42,10 +41,12 @@
   row-gap: 15px;
   & h1{
     font-size: 3.4rem;
+    color:var(--textM);
   }
 
   & h6{
     font-size: 1.5rem;
+    color: var(--textm);
   }
 
   & p{
@@ -55,14 +56,11 @@
   & .bottomIam{
     border: 3px solid #f27aa6;
     box-sizing: border-box;
-    /* border-color: #f27aa6; */
     font-size: 1.1rem;
-    /* border: none; */
     background-color: #a32e2e00;
-    color: azure;
+    color: var(--textM);
     height: 52px;
     width: 195px;
-    /* background-color: blueviolet; */
     border-radius: 10px;
     transition-duration: 1s;
   }
@@ -78,25 +76,25 @@
     border-radius: 16px;
     /* padding: 6px; */
     padding-left: 15px;
-    border: 1px solid #34345a;
-    background-color: #15152e;
-    height: 37px;
-    width: 55%;
+    border: 1px solid var(--boder);
+    background-color: var(--backgroun);
+    height: 41px;
+    width: 330px;
     flex-direction: row;
     align-items: center;
+    color: var(--textM);
   }
 
   & .verde{
     border-radius: 100%;
-    height: 35%;
-    width: 4%;
+    height: 14px;
+    width: 13px;
     background-color: aqua;
   }
 }
 
 .animacion{
   box-sizing: border-box;
-  --background-color: antiquewhite;
   width: 43%;
   height: 100%;
   display: flex;
@@ -121,4 +119,66 @@
     color: #0b0b1c;
     font-weight: 700;
     font-size: 17px;
+}
+
+@media(width <= 988px){
+  .presentacion{
+    --margin-top: 62px;
+  }
+}
+
+@media(width <= 900px){
+  .presentacion{
+    padding-top: 90px;
+  }
+}
+
+@media(width<=717px){
+    .presentacion{
+      margin-top: 0px;
+  }
+}
+
+@media(width<=618px){
+    .notificacion{
+      height:53px;
+    }
+}
+
+@media (width <= 900px){
+  
+  .cajaPrincipal{
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .animacion{
+    position: absolute;
+    --inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: .45;
+    pointer-events: none;
+  }
+
+  .presentacion{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+  
+  }
+
+  .presentacion .notificacion{
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
+    min-height: 37px;
+    padding-right: 15px;
+    height:53px;
+  }
+
 }

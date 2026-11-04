@@ -76,6 +76,9 @@
   display: flex;
   column-gap: 50px;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 50px;
 }
 
 .frontend{
@@ -103,4 +106,10 @@
 
 .parrafoDesc{
   color: #b9b8d0;
+}
+
+@media(width <= 412px){
+  .toolsAll{
+    column-gap: 0px;
+  }
 }

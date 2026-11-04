@@ -7,8 +7,8 @@
 }
 
 :where(.gir_one){
-  height: 10rem;
-  width: 15rem;
+  height: 17rem;
+  width: 17rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -33,8 +33,8 @@
 :where(.circle_ani){
   position: absolute;
   background-color: transparent;
-  height: 8rem;
-  width: 8rem;
+  height: 11rem;
+  width: 11rem;
   border-radius: 50%;
   outline: dashed var(--circle);
   z-index: -1;
@@ -78,17 +78,18 @@
 }
 
 .inforFloating{
+    color:var(--textM);
     font-size: 1.2rem;
     column-gap: 10px;
     display: flex;
-    background-color: #15152e;
+    background-color: var(--backgroun);
     /* border-color: #34345a; */
     height: 39px;
     width: 111px;
     border-radius: 18px;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid #34345a;
+    border: 1.5px solid var(--boder);
 }
 
 .circleMin{
@@ -96,6 +97,20 @@
   width: 10px;
   background-color: aqua;
   border-radius: 100%;
+}
+
+.simb{
+    font-size: 45px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    background-color: #f27aa6;
+    position: absolute;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px #f27aa6;
 }
 
 @keyframes animationCircleNegative{
@@ -133,7 +148,7 @@
     transform: rotate(-360deg);
   }
 }
-
+/*
 @media(width <= 550px){
 
   .circle_ani{
@@ -142,6 +157,7 @@
   }
 
   .circle_anitwo{
+    opacity: 1;
     width: 10rem;
     height: 10rem;
     animation: 
@@ -159,7 +175,7 @@
   }
 
   }
-
+*/
 /*animacion de aparicion*/
 
 .animationAparicion{

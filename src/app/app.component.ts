@@ -1,5 +1,4 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, ElementRef, Inject, inject, Renderer2,
-  Signal, viewChild } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component, Inject, inject, Renderer2,} from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,19 +18,18 @@ import { GalaxyComponent } from './components/pantallaInicio/galaxy/galaxycompon
 export class AppComponent{
 
       constructor(@Inject(DOCUMENT) private doc:Document){
-        afterNextRender(
+         afterNextRender(
           {
-            earlyRead:()=>{ this.canvasStart = this.canvasAnimationUniverses()?.nativeElement.getContext('2d');},
-            read:()=>{ this.verificationColorsSelect(); this.animation();  }
-           }
+           read:()=>{ this.verificationColorsSelect(); }
+          }
         );
       }
 
-      ngOnInit(): void{ this.initStart(); }
+     // ngOnInit(): void{ //this.initStart(); //}
 
   #render2:Renderer2 = inject(Renderer2);
 
-  private canvasAnimationUniverses:Signal<ElementRef<HTMLCanvasElement> | undefined> = viewChild<ElementRef<HTMLCanvasElement>>('pacCanvas');
+ /* private canvasAnimationUniverses:Signal<ElementRef<HTMLCanvasElement> | undefined> = viewChild<ElementRef<HTMLCanvasElement>>('pacCanvas');
   protected canvasStart:CanvasRenderingContext2D | undefined | null = null;
   protected startsSky = [
     { x:0, y:0 , speed:1, rotate:0,tamano:0, color:'', moveCate:0 }, { x:0 ,y:0 , speed:1, rotate:0,tamano:0, color:'', moveCate:0 },
@@ -71,7 +69,7 @@ export class AppComponent{
           this.canvasStart?.restore();
         }
     }
-
+*//*
    initStart():void{
     for(let start=0; start<this.startsSky.length;start = start+1 ){
       this.startsSky[start].x = this.ramdomXStart();
@@ -82,7 +80,7 @@ export class AppComponent{
       this.startsSky[start].moveCate = this.movePlaneDirection();
     }
   }
-
+*/
   verificationColorsSelect():void{
     const typeLight = localStorage.getItem('TypeLight');
       if(typeLight){
@@ -110,7 +108,7 @@ export class AppComponent{
     localStorage.setItem('TypeLight','Mode_Dark');
     return;
   }
-
+  /*
    ramdomXStart():number{
     return Math.random() * (1000 - 100) + 100;
   }
@@ -188,5 +186,5 @@ export class AppComponent{
           break;
     }
   }
-
+*/
 }
