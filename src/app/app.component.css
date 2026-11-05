@@ -54,6 +54,8 @@
   }
 
   & .bottomIam{
+    text-decoration: none;
+    display: flex;
     border: 3px solid #f27aa6;
     box-sizing: border-box;
     font-size: 1.1rem;
@@ -63,6 +65,8 @@
     width: 195px;
     border-radius: 10px;
     transition-duration: 1s;
+    align-items: center;
+    justify-content: center;
   }
 
   & .bottomIam:hover{
